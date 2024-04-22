@@ -8,6 +8,7 @@ const path = require("path");
 const router = require("./src/routes/api")
 const mongoose = require("mongoose");
 const app = express()
+const dotenv = require("dotenv").config()
 // Middlewares implement
 // Cross Origin enable
 app.use(cors())
