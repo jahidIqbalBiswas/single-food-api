@@ -24,6 +24,19 @@ exports.readFood = async (req, res) => {
         return res.json({err})
     }
 }
+exports.readFoodByID = async (req, res) => {
+    try{
+        const {id} = req.params
+        const data = await foodModel.findById(id)
+        if(data){
+            res.json({msg: data.name,data})
+        }else{
+            res.json({msg: 'Failed to read food'})
+        }
+    }catch(err){
+        res.json({err})
+    }
+}
 exports.updateFood = async (req, res) => {
     try{
         const {id} = req.params
